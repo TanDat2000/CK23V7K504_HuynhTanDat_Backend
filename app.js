@@ -19,12 +19,10 @@ return next(new ApiError(404, "Resource not found"));
 app.use((err, req, res, next) => {
 // Middleware xử lý lỗi tập trung.
 // Trong các đoạn code xử lý ở các route, gọi next(error) sẽ chuyển về middleware xử ly loi nay
-return res.status(error.statusCode || 500).json({
-message: error.message || "Internal Server Error",
+return res.status(err.statusCode || 500).json({
+message: err.message || "Internal Server Error",
 });
 });
-
-module.exports = app;
 
 app.get("/", (req, res) => {
     res.json({ message: " Welcome to contact book application." });
