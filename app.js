@@ -7,7 +7,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/api/contacts", contactsRouter);
 
 app.use("/api/contacts", contactsRouter);
 // handle 404 response
